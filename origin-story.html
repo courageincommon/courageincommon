@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Origin Story — Courage In Common™</title>
+  <meta name="description" content="The story behind the Courage in Common Ribbon — a symbol born from the invisible wounds of war and the courage to heal together.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-deep: #040a18;
+      --bg-primary: #0a1628;
+      --bg-surface: #0f1f3a;
+      --bg-card: #111e35;
+      --border: #1a2d4d;
+      --border-gold: rgba(212, 175, 55, 0.25);
+      --gold: #d4af37;
+      --gold-bright: #e8c84a;
+      --gold-dim: #b8960b;
+      --text-primary: #f0f0f0;
+      --text-muted: #8a9bb5;
+      --text-dim: #5a6e8a;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      color: var(--text-primary);
+      background: var(--bg-deep);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--gold); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--gold-bright); }
+
+    .overline {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .heading-section {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.2;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+    }
+    p { color: var(--text-muted); font-size: 1rem; max-width: 65ch; }
+
+    .divider-diamond {
+      display: flex; align-items: center; justify-content: center; gap: 1rem;
+      margin: 3rem auto; max-width: 300px;
+    }
+    .divider-diamond::before, .divider-diamond::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+    }
+    .divider-diamond .diamond {
+      width: 7px; height: 7px;
+      background: linear-gradient(135deg, var(--gold-dim), var(--gold-bright));
+      transform: rotate(45deg); flex-shrink: 0;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.5rem 0; transition: all var(--transition);
+    }
+    .navbar.scrolled {
+      background: rgba(4, 10, 24, 0.95); backdrop-filter: blur(20px);
+      padding: 1rem 0; border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-brand {
+      font-family: var(--font-display); font-weight: 600; font-size: 1.3rem;
+      color: var(--text-primary); letter-spacing: 0.05em;
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-muted);
+      transition: color var(--transition); position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 1px; background: var(--gold); transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      z-index: 10001; background: none; border: none; padding: 5px;
+    }
+    .hamburger span { width: 24px; height: 1.5px; background: var(--text-primary); transition: all 0.3s ease; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu {
+      display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: #000000; flex-direction: column; justify-content: center;
+      align-items: center; gap: 2.5rem; z-index: 10000;
+    }
+    .mobile-menu.active { display: flex; }
+    .mobile-menu a {
+      font-family: var(--font-display); font-size: 1.8rem; font-weight: 400;
+      color: var(--text-muted); letter-spacing: 0.1em; transition: color 0.3s ease;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+    @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } }
+
+    /* Prestige box */
+    .prestige-box {
+      position: relative;
+      background: linear-gradient(180deg, #0d1525 0%, #111e35 30%, #0f1a30 60%, #0d1525 100%);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 4rem 3.5rem;
+      box-shadow: 0 0 80px rgba(212, 175, 55, 0.02), 0 4px 30px rgba(0, 0, 0, 0.4);
+    }
+    .corner { position: absolute; width: 40px; height: 40px; pointer-events: none; }
+    .corner::before, .corner::after {
+      content: ''; position: absolute;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.5), rgba(212, 175, 55, 0.2));
+    }
+    .corner-tl { top: 12px; left: 12px; }
+    .corner-tl::before { top: 0; left: 0; width: 1px; height: 40px; }
+    .corner-tl::after { top: 0; left: 0; width: 40px; height: 1px; }
+    .corner-tr { top: 12px; right: 12px; }
+    .corner-tr::before { top: 0; right: 0; width: 1px; height: 40px; }
+    .corner-tr::after { top: 0; right: 0; width: 40px; height: 1px; }
+    .corner-bl { bottom: 12px; left: 12px; }
+    .corner-bl::before { bottom: 0; left: 0; width: 1px; height: 40px; }
+    .corner-bl::after { bottom: 0; left: 0; width: 40px; height: 1px; }
+    .corner-br { bottom: 12px; right: 12px; }
+    .corner-br::before { bottom: 0; right: 0; width: 1px; height: 40px; }
+    .corner-br::after { bottom: 0; right: 0; width: 40px; height: 1px; }
+
+    /* Page layout */
+    .page-hero {
+      padding: 10rem 0 5rem; text-align: center;
+      background: radial-gradient(ellipse at 50% 50%, rgba(58, 110, 165, 0.06) 0%, transparent 50%), var(--bg-deep);
+    }
+    .page-hero .heading-section { margin-bottom: 1rem; }
+    .page-hero p { margin: 0 auto; }
+    .page-content { padding: 5rem 0 8rem; }
+    .page-content p { margin-bottom: 1.5rem; }
+    .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+    .section-pad { padding: 5rem 0; }
+
+    .origin-section { margin-bottom: 4rem; }
+    .origin-section h3 {
+      font-family: var(--font-display); font-weight: 600; font-size: 1.8rem;
+      color: var(--gold); margin-bottom: 1.5rem;
+    }
+    .origin-section p { margin-bottom: 1.5rem; }
+
+    .historical-terms {
+      font-family: var(--font-display); font-size: 1.2rem; font-style: italic;
+      color: var(--gold); text-align: center; padding: 2rem;
+      border-left: 2px solid rgba(212, 175, 55, 0.3);
+      margin: 2rem 0;
+    }
+
+    .cta-box {
+      text-align: center; padding: 3rem;
+      background: var(--bg-card); border: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .cta-box p { margin: 0 auto 1.5rem; }
+    .btn-primary {
+      display: inline-block; padding: 1rem 3rem;
+      background: var(--gold); color: var(--bg-deep);
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; border: 1px solid var(--gold);
+      transition: all var(--transition);
+    }
+    .btn-primary:hover { background: var(--gold-bright); color: var(--bg-deep); }
+
+    /* Footer */
+    footer {
+      background: var(--bg-deep); border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem; position: relative; z-index: 2;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+    }
+    .footer-brand { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; color: var(--text-primary); margin-bottom: 1rem; }
+    .footer-brand span { color: var(--gold); }
+    .footer-desc { font-size: 0.9rem; color: var(--text-muted); max-width: 350px; line-height: 1.7; }
+    .footer-heading { font-family: var(--font-body); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.8rem; }
+    .footer-links a { font-size: 0.9rem; color: var(--text-muted); transition: color var(--transition); }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1200px; margin: 3rem auto 0; padding: 2rem 2rem 0;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--text-dim); }
+    .footer-tagline { font-family: var(--font-display); font-style: italic; font-size: 0.9rem; color: var(--text-dim); }
+    @media (max-width: 768px) {
+      .footer-inner { grid-template-columns: 1fr; text-align: center; }
+      .footer-desc { margin: 0 auto; }
+      .footer-bottom { justify-content: center; text-align: center; }
+      .prestige-box { padding: 2.5rem 1.5rem; }
+    }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Courage <span>in</span> Common</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/origin-story.html">Origin Story</a></li>
+        <li><a href="/merchandise.html">Merchandise</a></li>
+        <li><a href="/faqs.html">FAQs</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/origin-story.html">Origin Story</a>
+    <a href="/merchandise.html">Merchandise</a>
+    <a href="/faqs.html">FAQs</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="container-narrow">
+      <span class="overline reveal">Our Story</span>
+      <h1 class="heading-section reveal reveal-delay-1">The Courage in Common Ribbon</h1>
+      <p class="reveal reveal-delay-2" style="font-size: 1.05rem;">A symbol born from the invisible wounds of war and the courage to heal together.</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container-narrow">
+
+      <div class="origin-section reveal">
+        <h3>A Ribbon Born of Healing and Unity</h3>
+        <p>
+          After every war, American soldiers return home carrying not only visible scars but also invisible wounds — changes in mind and spirit that test understanding and compassion. These wounds are not easily seen, explained, or healed. Families and communities often watch in silence, uncertain of what to say, paralyzed by the limits of their own understanding.
+        </p>
+        <p>Over time, society has tried to put names to these struggles:</p>
+        <div class="historical-terms">
+          Soldier's Heart, Battle Fatigue, Shell Shock<br>
+          and today; Post-Traumatic Stress Disorder, or PTSD.
+        </div>
+        <p>
+          Yet not all pain fits neatly under a medical term. Some experiences leave wounds we now call moral injuries — the kind that challenge one's faith in themselves, in humanity, or in the justness of the world.
+        </p>
+        <p>
+          Too often, our instinct is to look away. We distance ourselves from those who struggle, not because we don't care, but because we don't know what to do. But looking away has never healed anyone.
+        </p>
+      </div>
+
+      <hr class="divider-glow" style="border: none; height: 1px; margin: 4rem auto; max-width: 600px; background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.1) 15%, rgba(212, 175, 55, 0.4) 50%, rgba(212, 175, 55, 0.1) 85%, transparent 100%); box-shadow: 0 0 15px rgba(212, 175, 55, 0.08);">
+
+      <div class="origin-section reveal">
+        <h3>The Meaning Behind the Colors</h3>
+        <p>
+          The Courage in Common Ribbon was intentionally designed to recognize the organizations that stand shoulder to shoulder in support of veterans. Its colors symbolize service, sacrifice, hope, healing, and community collaboration.
+        </p>
+        <p>
+          <strong style="color: var(--gold);">Navy Blue</strong> represents the service and duty of those who serve.<br>
+          <strong style="color: var(--gold);">Gold</strong> honors the sacrifice and value of every life.<br>
+          <strong style="color: var(--gold);">White</strong> embodies hope and the purity of community support.<br>
+          <strong style="color: var(--gold);">Green</strong> symbolizes growth, renewal, and the journey toward wellness.
+        </p>
+        <p>Together, these colors tell a story of unity rather than division.</p>
+      </div>
+
+      <div class="divider-diamond reveal">
+        <div class="diamond"></div>
+      </div>
+
+      <div class="origin-section reveal">
+        <h3>The Movement Ahead</h3>
+        <p>
+          The Courage in Common Ribbon is not just a symbol to wear — it is a call to action. It reminds us that honoring veterans means more than ceremonies or parades. It means collective action. It means standing together to ensure that no one who served our nation must fight their battles alone.
+        </p>
+        <p>
+          Wearing or displaying the Courage in Common Ribbon is a powerful act of solidarity. It says to every veteran, every family member, every neighbor: <em style="color: var(--gold);">"You are seen. You are valued. You are not alone on your journey toward wellness."</em>
+        </p>
+      </div>
+
+      <div class="cta-box reveal">
+        <p style="font-family: var(--font-display); font-size: 1.2rem; color: var(--text-primary);">
+          If you wish to show your understanding and appreciation for those who have served, connect with your local Marine Corps League Detachment to learn more about how your community can take part in this vital work.
+        </p>
+        <p style="margin-bottom: 2rem;">If you want to donate to the initiative, please visit:</p>
+        <a href="https://www.veteranscouncilglencove.org" class="btn-primary" target="_blank" rel="noopener">Veterans Council Glen Cove</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Courage <span>in</span> Common<span style="color: var(--gold); font-size: 0.6em;">™</span></div>
+        <p class="footer-desc">A symbol that unites those who stand for our veterans.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/origin-story.html">Origin Story</a></li>
+          <li><a href="/merchandise.html">Merchandise</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Support</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.veteranscouncilglencove.org" target="_blank" rel="noopener">Veterans Council Glen Cove</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Courage In Common. All rights reserved.</p>
+      <p class="footer-tagline">Stand Together. Support Veterans.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { hamburger.classList.remove('active'); mobileMenu.classList.remove('active'); }));
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

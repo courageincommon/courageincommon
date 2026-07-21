@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courage In Common™ — A Symbol That Unites Those Who Stand for Our Veterans</title>
+  <meta name="description" content="The Courage in Common Ribbon unites communities around veteran mental health awareness. Wear the ribbon. Support veterans. Build stronger communities.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Courage In Common™ — Stand Together. Support Veterans.">
+  <meta property="og:description" content="A symbol that unites those who stand for our veterans. One ribbon. One mission. Countless lives changed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://courageincommon.org">
+  <meta property="og:image" content="https://courageincommon.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NonprofitType",
+    "name": "Courage In Common",
+    "description": "A symbol that unites those who stand for our veterans. The Courage in Common Ribbon promotes veteran mental health awareness and community support.",
+    "url": "https://courageincommon.org",
+    "mission": "To unite communities around veteran mental health awareness, reduce stigma, and ensure no veteran fights alone."
+  }
+  </script>
+
+  <style>
+    /* ============================================
+       CSS CUSTOM PROPERTIES
+       ============================================ */
+    :root {
+      --bg-deep: #040a18;
+      --bg-primary: #0a1628;
+      --bg-surface: #0f1f3a;
+      --bg-card: #111e35;
+      --border: #1a2d4d;
+      --border-gold: rgba(212, 175, 55, 0.25);
+      
+      --navy: #1a2d4d;
+      --navy-light: #243a5e;
+      --blue-accent: #3a6ea5;
+      --blue-glow: rgba(58, 110, 165, 0.15);
+      
+      --gold: #d4af37;
+      --gold-bright: #e8c84a;
+      --gold-dim: #b8960b;
+      
+      --text-primary: #f0f0f0;
+      --text-muted: #8a9bb5;
+      --text-dim: #5a6e8a;
+      
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      
+      --transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      color: var(--text-primary);
+      background: var(--bg-deep);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: var(--gold); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--gold-bright); }
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    .heading-luxury {
+      font-family: var(--font-display);
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-size: 0.85rem;
+    }
+
+    .heading-section {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.2;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+    }
+
+    .gold-text {
+      background: linear-gradient(180deg, #B8860B 0%, #DAA520 25%, #FFD700 50%, #DAA520 75%, #B8860B 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+
+    .overline {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    p { color: var(--text-muted); font-size: 1rem; max-width: 65ch; }
+
+    /* ============================================
+       LAYOUT
+       ============================================ */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .container-narrow {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-pad {
+      padding: 8rem 0;
+    }
+
+    .section-pad-lg {
+      padding: 10rem 0;
+    }
+
+    /* ============================================
+       DIVIDERS
+       ============================================ */
+    .divider-diamond {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 3rem auto;
+      max-width: 300px;
+    }
+
+    .divider-diamond::before,
+    .divider-diamond::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+    }
+
+    .divider-diamond .diamond {
+      width: 7px;
+      height: 7px;
+      background: linear-gradient(135deg, var(--gold-dim), var(--gold-bright));
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .divider-glow {
+      border: none;
+      height: 1px;
+      margin: 0 auto;
+      max-width: 600px;
+      background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.1) 15%, rgba(212, 175, 55, 0.4) 50%, rgba(212, 175, 55, 0.1) 85%, transparent 100%);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.08);
+    }
+
+    /* ============================================
+       NAVIGATION
+       ============================================ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: all var(--transition);
+    }
+
+    .navbar.scrolled {
+      background: rgba(4, 10, 24, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-brand span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color var(--transition);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 10001;
+      background: none;
+      border: none;
+      padding: 5px;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 1.5px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #000000;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      z-index: 10000;
+    }
+
+    .mobile-menu.active { display: flex; }
+
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-menu a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ============================================
+       HERO SECTION
+       ============================================ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(58, 110, 165, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-primary) 50%, var(--bg-deep) 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, rgba(58, 110, 165, 0.03) 0%, transparent 70%);
+      animation: heroGlow 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGlow {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(5%, 3%); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      padding: 2rem;
+    }
+
+    .hero-ribbon {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .hero-brand {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--text-primary);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-brand .tm {
+      font-size: 0.4em;
+      vertical-align: super;
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      font-style: italic;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 1rem 3rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      transform: translateY(100%);
+      transition: transform var(--transition);
+      z-index: -1;
+    }
+
+    .hero-cta:hover {
+      color: var(--bg-deep);
+    }
+
+    .hero-cta:hover::before {
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       PRESTIGE BOX (Corner Ornaments)
+       ============================================ */
+    .prestige-box {
+      position: relative;
+      background: linear-gradient(180deg, #0d1525 0%, #111e35 30%, #0f1a30 60%, #0d1525 100%);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 4rem 3.5rem;
+      box-shadow:
+        0 0 80px rgba(212, 175, 55, 0.02),
+        0 4px 30px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(212, 175, 55, 0.05),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .corner { position: absolute; width: 40px; height: 40px; pointer-events: none; }
+    .corner::before, .corner::after {
+      content: '';
+      position: absolute;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.5), rgba(212, 175, 55, 0.2));
+    }
+    .corner-tl { top: 12px; left: 12px; }
+    .corner-tl::before { top: 0; left: 0; width: 1px; height: 40px; }
+    .corner-tl::after { top: 0; left: 0; width: 40px; height: 1px; }
+    .corner-tr { top: 12px; right: 12px; }
+    .corner-tr::before { top: 0; right: 0; width: 1px; height: 40px; }
+    .corner-tr::after { top: 0; right: 0; width: 40px; height: 1px; }
+    .corner-bl { bottom: 12px; left: 12px; }
+    .corner-bl::before { bottom: 0; left: 0; width: 1px; height: 40px; }
+    .corner-bl::after { bottom: 0; left: 0; width: 40px; height: 1px; }
+    .corner-br { bottom: 12px; right: 12px; }
+    .corner-br::before { bottom: 0; right: 0; width: 1px; height: 40px; }
+    .corner-br::after { bottom: 0; right: 0; width: 40px; height: 1px; }
+
+    .prestige-box:hover { border-color: rgba(212, 175, 55, 0.35); }
+    .prestige-box:hover .corner::before,
+    .prestige-box:hover .corner::after { background: linear-gradient(135deg, rgba(212, 175, 55, 0.8), rgba(212, 175, 55, 0.4)); }
+
+    /* ============================================
+       SECTIONS
+       ============================================ */
+    
+    /* Mission / What the Ribbon Represents */
+    .section-mission {
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(58, 110, 165, 0.04) 0%, transparent 50%),
+        var(--bg-deep);
+    }
+
+    .section-represent {
+      background:
+        radial-gradient(ellipse at 80% 30%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+        var(--bg-primary);
+    }
+
+    .section-colors {
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(58, 110, 165, 0.05) 0%, transparent 50%),
+        var(--bg-deep);
+    }
+
+    .section-community {
+      background:
+        radial-gradient(ellipse at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+        var(--bg-primary);
+    }
+
+    .section-involved {
+      background:
+        radial-gradient(ellipse at 70% 40%, rgba(58, 110, 165, 0.04) 0%, transparent 50%),
+        var(--bg-deep);
+    }
+
+    .section-vision {
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+        var(--bg-primary);
+    }
+
+    .section-join {
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(58, 110, 165, 0.06) 0%, transparent 50%),
+        var(--bg-deep);
+      text-align: center;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-header .heading-section {
+      margin-bottom: 1.5rem;
+    }
+
+    /* ============================================
+       REPRESENT LIST
+       ============================================ */
+    .represent-list {
+      list-style: none;
+      margin: 2rem 0;
+    }
+
+    .represent-list li {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(26, 45, 77, 0.5);
+      color: var(--text-muted);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .represent-list li::before {
+      content: '◆';
+      color: var(--gold);
+      font-size: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .represent-list li:last-child { border-bottom: none; }
+
+    .represent-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-top: 2rem;
+      padding-left: 1.5rem;
+      border-left: 2px solid rgba(212, 175, 55, 0.3);
+    }
+
+    /* ============================================
+       COLOR CARDS
+       ============================================ */
+    .color-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .color-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      transition: all var(--transition);
+    }
+
+    .color-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+
+    .color-swatch {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      border: 2px solid rgba(255,255,255,0.1);
+    }
+
+    .color-card h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .color-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ============================================
+       INVOLVED LIST
+       ============================================ */
+    .involved-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .involved-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+
+    .involved-item:hover {
+      border-color: var(--border-gold);
+    }
+
+    .involved-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .involved-item h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .involved-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ============================================
+       VISION
+       ============================================ */
+    .vision-statement {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 400;
+      color: var(--text-primary);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .vision-highlight {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      font-weight: 600;
+      text-align: center;
+      margin-top: 3rem;
+      font-style: italic;
+      background: linear-gradient(180deg, #B8860B 0%, #DAA520 25%, #FFD700 50%, #DAA520 75%, #B8860B 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ============================================
+       CTA SECTION
+       ============================================ */
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 1rem 3rem;
+      background: var(--gold);
+      color: var(--bg-deep);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      transition: all var(--transition);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-bright);
+      color: var(--bg-deep);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 1rem 3rem;
+      background: transparent;
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      transition: all var(--transition);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold-bright);
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    footer {
+      background: var(--bg-deep);
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand span { color: var(--gold); }
+
+    .footer-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 350px;
+      line-height: 1.7;
+    }
+
+    .footer-heading {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li { margin-bottom: 0.8rem; }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding: 2rem 2rem 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .footer-tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .footer-desc { margin: 0 auto; }
+      .footer-bottom { justify-content: center; text-align: center; }
+    }
+
+    /* ============================================
+       SCROLL REVEAL
+       ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 768px) {
+      .section-pad { padding: 5rem 0; }
+      .section-pad-lg { padding: 6rem 0; }
+      .prestige-box { padding: 2.5rem 1.5rem; }
+      .color-cards { grid-template-columns: 1fr; }
+      .involved-grid { grid-template-columns: 1fr; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+
+    /* ============================================
+       SUBPAGES
+       ============================================ */
+    .page-hero {
+      padding: 10rem 0 5rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(58, 110, 165, 0.06) 0%, transparent 50%),
+        var(--bg-deep);
+    }
+
+    .page-hero .heading-section {
+      margin-bottom: 1rem;
+    }
+
+    .page-hero p {
+      margin: 0 auto;
+    }
+
+    .page-content {
+      padding: 5rem 0 8rem;
+    }
+
+    .page-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Merchandise grid */
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .merch-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+
+    .merch-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+
+    .merch-img {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--text-dim);
+    }
+
+    .merch-info {
+      padding: 1.5rem;
+    }
+
+    .merch-info h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .merch-info .price {
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .merch-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+
+    .faq-question {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      margin-bottom: 0.8rem;
+      cursor: pointer;
+    }
+
+    .faq-question::before {
+      content: 'Q. ';
+      color: var(--gold);
+    }
+
+    .faq-answer {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Courage <span>in</span> Common</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/origin-story.html">Origin Story</a></li>
+        <li><a href="/merchandise.html">Merchandise</a></li>
+        <li><a href="/faqs.html">FAQs</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/origin-story.html">Origin Story</a>
+    <a href="/merchandise.html">Merchandise</a>
+    <a href="/faqs.html">FAQs</a>
+  </div>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-ribbon reveal">🎗️</div>
+      <h1 class="hero-brand reveal reveal-delay-1">
+        Courage <span class="gold-text">in</span> Common<span class="tm">™</span>
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-2">A Symbol That Unites Those Who Stand for Our Veterans</p>
+      <p class="hero-tagline reveal reveal-delay-3">One Ribbon. One Mission. Countless Lives Changed.</p>
+      <p class="hero-desc reveal reveal-delay-4">
+        Every day, veterans and their families face invisible battles that too often go unnoticed.
+        The Courage in Common Ribbon was created to unite communities around a simple but powerful belief:
+      </p>
+      <p style="font-family: var(--font-display); font-size: 1.4rem; color: var(--gold); margin-bottom: 3rem; font-weight: 600;" class="reveal reveal-delay-4">
+        No veteran should fight alone.
+      </p>
+      <a href="#mission" class="hero-cta reveal reveal-delay-4">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       MISSION
+       ============================================ -->
+  <section class="section-mission section-pad" id="mission">
+    <div class="container-narrow">
+      <div class="section-header reveal">
+        <span class="overline">Our Purpose</span>
+        <h2 class="heading-section">More Than a Symbol</h2>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p style="font-size: 1.05rem; line-height: 1.9;">
+          This ribbon is more than a symbol. It is a commitment to reducing stigma, encouraging conversations about mental health, strengthening community support, and recognizing the organizations and individuals working together to improve the lives of veterans.
+        </p>
+      </div>
+      <div class="divider-diamond reveal reveal-delay-2">
+        <div class="diamond"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHAT THE RIBBON REPRESENTS
+       ============================================ -->
+  <section class="section-represent section-pad" id="represent">
+    <div class="container-narrow">
+      <div class="prestige-box reveal">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        
+        <div class="section-header">
+          <span class="overline">What It Means</span>
+          <h2 class="heading-section">What the Ribbon Represents</h2>
+        </div>
+        
+        <p style="margin-bottom: 1.5rem;">The Courage in Common Ribbon honors:</p>
+        
+        <ul class="represent-list">
+          <li>Veterans and active-duty service members</li>
+          <li>Military families and caregivers</li>
+          <li>First responders</li>
+          <li>Community advocates</li>
+          <li>Organizations committed to veteran wellness</li>
+          <li>Every person who believes courage is stronger when shared</li>
+        </ul>
+        
+        <div class="divider-diamond" style="margin: 2rem 0;">
+          <div class="diamond"></div>
+        </div>
+        
+        <p class="represent-quote">
+          It reminds us that asking for help is an act of courage — and offering support is an act of service.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       MEANING BEHIND THE COLORS
+       ============================================ -->
+  <section class="section-colors section-pad" id="colors">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center;">
+        <span class="overline">Symbolism</span>
+        <h2 class="heading-section">The Meaning Behind the Colors</h2>
+        <p style="margin: 1.5rem auto 0; text-align: center;">
+          The ribbon was intentionally designed to recognize the organizations that stand shoulder to shoulder in support of veterans.
+          Its colors symbolize service, sacrifice, hope, healing, and community collaboration.
+        </p>
+      </div>
+
+      <div class="divider-diamond reveal">
+        <div class="diamond"></div>
+      </div>
+
+      <div class="color-cards">
+        <div class="color-card reveal reveal-delay-1">
+          <div class="color-swatch" style="background: #1a3a6b;"></div>
+          <h3>Navy Blue</h3>
+          <p>Service, duty, and the unwavering commitment of those who serve</p>
+        </div>
+        <div class="color-card reveal reveal-delay-2">
+          <div class="color-swatch" style="background: linear-gradient(135deg, #B8860B, #FFD700);"></div>
+          <h3>Gold</h3>
+          <p>Sacrifice, honor, and the value of every life served</p>
+        </div>
+        <div class="color-card reveal reveal-delay-3">
+          <div class="color-swatch" style="background: #e8e8e8;"></div>
+          <h3>White</h3>
+          <p>Hope, healing, and the purity of community support</p>
+        </div>
+        <div class="color-card reveal reveal-delay-4">
+          <div class="color-swatch" style="background: #2d8a4e;"></div>
+          <h3>Green</h3>
+          <p>Growth, renewal, and the journey toward wellness</p>
+        </div>
+      </div>
+
+      <p class="reveal" style="text-align: center; margin-top: 3rem; font-family: var(--font-display); font-size: 1.1rem; color: var(--text-muted); font-style: italic;">
+        Together, these colors tell a story of unity rather than division.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       BECOME A COMMUNITY
+       ============================================ -->
+  <section class="section-community section-pad" id="community">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center;">
+        <span class="overline">Join Us</span>
+        <h2 class="heading-section">Become a Courage in Common Community</h2>
+        <p style="margin: 1.5rem auto 0; text-align: center;">
+          Cities, towns, counties, businesses, schools, nonprofits, and veteran organizations can all participate.
+        </p>
+      </div>
+
+      <p class="reveal" style="text-align: center; margin: 2rem auto; font-weight: 500; color: var(--text-primary);">Together we can:</p>
+
+      <div class="involved-grid">
+        <div class="involved-item reveal reveal-delay-1">
+          <span class="involved-icon">🧠</span>
+          <div>
+            <h3>Awareness</h3>
+            <p>Promote veteran mental health awareness in your community</p>
+          </div>
+        </div>
+        <div class="involved-item reveal reveal-delay-2">
+          <span class="involved-icon">🤝</span>
+          <div>
+            <h3>Reduce Stigma</h3>
+            <p>Break down barriers surrounding PTSD and suicide prevention</p>
+          </div>
+        </div>
+        <div class="involved-item reveal reveal-delay-3">
+          <span class="involved-icon">🔗</span>
+          <div>
+            <h3>Connect</h3>
+            <p>Link veterans with local resources and support networks</p>
+          </div>
+        </div>
+        <div class="involved-item reveal reveal-delay-1">
+          <span class="involved-icon">🎉</span>
+          <div>
+            <h3>Celebrate</h3>
+            <p>Honor community partnerships and collaborative efforts</p>
+          </div>
+        </div>
+        <div class="involved-item reveal reveal-delay-2">
+          <span class="involved-icon">💪</span>
+          <div>
+            <h3>Strengthen</h3>
+            <p>Build stronger, more resilient communities for all</p>
+          </div>
+        </div>
+        <div class="involved-item reveal reveal-delay-3">
+          <span class="involved-icon">❤️</span>
+          <div>
+            <h3>Support</h3>
+            <p>When a community embraces this mission, everyone benefits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WAYS TO GET INVOLVED
+       ============================================ -->
+  <section class="section-involved section-pad" id="involved">
+    <div class="container-narrow">
+      <div class="section-header reveal" style="text-align: center;">
+        <span class="overline">Take Action</span>
+        <h2 class="heading-section">Ways to Get Involved</h2>
+      </div>
+
+      <div class="prestige-box reveal" style="margin-top: 3rem;">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <ul class="represent-list">
+          <li>Wear the Courage in Common Ribbon</li>
+          <li>Display it at your business or organization</li>
+          <li>Sponsor awareness events</li>
+          <li>Support local veterans</li>
+          <li>Become an official community partner</li>
+          <li>Help spread hope one conversation at a time</li>
+        </ul>
+
+        <div class="divider-diamond" style="margin: 2rem 0;">
+          <div class="diamond"></div>
+        </div>
+
+        <p style="text-align: center; font-family: var(--font-display); font-size: 1.2rem; color: var(--gold); font-weight: 600;">
+          Every action — large or small — helps save lives.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       OUR VISION
+       ============================================ -->
+  <section class="section-vision section-pad-lg" id="vision">
+    <div class="container-narrow" style="text-align: center;">
+      <div class="section-header reveal">
+        <span class="overline" style="text-align: center;">Looking Ahead</span>
+        <h2 class="heading-section">Our Vision</h2>
+      </div>
+      
+      <p class="vision-statement reveal reveal-delay-1">
+        We envision a future where communities across America proudly display the Courage in Common Ribbon as a universal symbol of compassion, resilience, and support for those who have served.
+      </p>
+
+      <div class="divider-diamond reveal reveal-delay-2">
+        <div class="diamond"></div>
+      </div>
+
+      <p class="reveal reveal-delay-3" style="font-size: 1.05rem; margin-bottom: 1rem;">When people see the ribbon, they will know:</p>
+      
+      <p class="vision-highlight reveal reveal-delay-4">
+        This is a community that stands with its veterans.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       JOIN THE MOVEMENT
+       ============================================ -->
+  <section class="section-join section-pad-lg" id="join">
+    <div class="container-narrow">
+      <div class="section-header reveal">
+        <span class="overline" style="text-align: center;">Get Started</span>
+        <h2 class="heading-section">Join the Movement</h2>
+      </div>
+
+      <p class="reveal reveal-delay-1" style="margin: 0 auto 1.5rem; text-align: center; font-size: 1.05rem;">
+        Whether you're a veteran, family member, civic leader, business owner, nonprofit organization, or simply someone who cares...
+      </p>
+
+      <p class="reveal reveal-delay-2" style="margin: 0 auto 2rem; text-align: center; font-size: 1.1rem; color: var(--text-primary); font-weight: 500;">
+        There is a place for you.
+      </p>
+
+      <p class="reveal reveal-delay-3" style="margin: 0 auto 3rem; text-align: center; font-size: 1rem;">
+        Together, we can transform awareness into action, isolation into connection, and courage into community.
+      </p>
+
+      <div class="reveal reveal-delay-4">
+        <p style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; text-align: center; margin-bottom: 0.5rem;">
+          Courage <span class="gold-text">in</span> Common<span style="color: var(--gold); font-size: 0.5em;">™</span>
+        </p>
+        <p style="font-family: var(--font-display); font-style: italic; font-size: 1.1rem; text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
+          Because no hero should ever have to carry the weight of service alone.
+        </p>
+      </div>
+
+      <div class="divider-glow reveal"></div>
+
+      <p class="reveal" style="text-align: center; margin-top: 2rem; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 600;">
+        Stand Together. Support Veterans. Build Stronger Communities.
+      </p>
+
+      <div class="cta-buttons reveal">
+        <a href="https://www.veteranscouncilglencove.org" class="btn-primary" target="_blank" rel="noopener">Donate Now</a>
+        <a href="#community" class="btn-outline">Become a Partner</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Courage <span>in</span> Common<span style="color: var(--gold); font-size: 0.6em;">™</span></div>
+        <p class="footer-desc">
+          A symbol that unites those who stand for our veterans. One ribbon. One mission. Countless lives changed.
+        </p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/origin-story.html">Origin Story</a></li>
+          <li><a href="/merchandise.html">Merchandise</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Support</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.veteranscouncilglencove.org" target="_blank" rel="noopener">Veterans Council Glen Cove</a></li>
+          <li><a href="#community">Become a Partner</a></li>
+          <li><a href="#involved">Get Involved</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Courage In Common. All rights reserved.</p>
+      <p class="footer-tagline">Stand Together. Support Veterans.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

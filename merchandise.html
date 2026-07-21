@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merchandise — Courage In Common™</title>
+  <meta name="description" content="Show your support with Courage in Common merchandise. Wear the ribbon. Support veterans.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-deep: #040a18;
+      --bg-primary: #0a1628;
+      --bg-surface: #0f1f3a;
+      --bg-card: #111e35;
+      --border: #1a2d4d;
+      --border-gold: rgba(212, 175, 55, 0.25);
+      --gold: #d4af37;
+      --gold-bright: #e8c84a;
+      --gold-dim: #b8960b;
+      --text-primary: #f0f0f0;
+      --text-muted: #8a9bb5;
+      --text-dim: #5a6e8a;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body); font-weight: 300; color: var(--text-primary);
+      background: var(--bg-deep); line-height: 1.8; -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 1;
+    }
+    a { color: var(--gold); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--gold-bright); }
+
+    .overline {
+      font-family: var(--font-body); font-weight: 700; font-size: 0.8rem;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem; display: block;
+    }
+    .heading-section {
+      font-family: var(--font-display); font-weight: 400;
+      font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.2;
+      color: var(--text-primary); letter-spacing: 0.02em;
+    }
+
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.5rem 0; transition: all var(--transition);
+    }
+    .navbar.scrolled {
+      background: rgba(4, 10, 24, 0.95); backdrop-filter: blur(20px);
+      padding: 1rem 0; border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-brand { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; color: var(--text-primary); letter-spacing: 0.05em; }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); transition: color var(--transition); position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width var(--transition); }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 10001; background: none; border: none; padding: 5px; }
+    .hamburger span { width: 24px; height: 1.5px; background: var(--text-primary); transition: all 0.3s ease; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000000; flex-direction: column; justify-content: center; align-items: center; gap: 2.5rem; z-index: 10000; }
+    .mobile-menu.active { display: flex; }
+    .mobile-menu a { font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; color: var(--text-muted); letter-spacing: 0.1em; transition: color 0.3s ease; }
+    .mobile-menu a:hover { color: var(--gold); }
+    @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } }
+
+    .page-hero { padding: 10rem 0 5rem; text-align: center; background: radial-gradient(ellipse at 50% 50%, rgba(58, 110, 165, 0.06) 0%, transparent 50%), var(--bg-deep); }
+    .page-hero .heading-section { margin-bottom: 1rem; }
+    .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .section-pad { padding: 5rem 0; }
+
+    .merch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .merch-card { background: var(--bg-card); border: 1px solid var(--border); overflow: hidden; transition: all var(--transition); }
+    .merch-card:hover { border-color: var(--border-gold); transform: translateY(-4px); }
+    .merch-img { width: 100%; aspect-ratio: 1; background: var(--bg-surface); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--text-dim); overflow: hidden; }
+    .merch-img img { width: 100%; height: 100%; object-fit: cover; }
+    .merch-info { padding: 1.5rem; }
+    .merch-info h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.3rem; }
+    .merch-info .price { font-size: 1.1rem; color: var(--gold); font-weight: 500; margin-bottom: 0.5rem; }
+    .merch-info p { font-size: 0.9rem; color: var(--text-muted); }
+
+    footer { background: var(--bg-deep); border-top: 1px solid var(--border); padding: 4rem 0 2rem; position: relative; z-index: 2; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+    .footer-brand { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; color: var(--text-primary); margin-bottom: 1rem; }
+    .footer-brand span { color: var(--gold); }
+    .footer-desc { font-size: 0.9rem; color: var(--text-muted); max-width: 350px; line-height: 1.7; }
+    .footer-heading { font-family: var(--font-body); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.8rem; }
+    .footer-links a { font-size: 0.9rem; color: var(--text-muted); }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom { max-width: 1200px; margin: 3rem auto 0; padding: 2rem 2rem 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 0.8rem; color: var(--text-dim); }
+    .footer-tagline { font-family: var(--font-display); font-style: italic; font-size: 0.9rem; color: var(--text-dim); }
+    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; text-align: center; } .footer-desc { margin: 0 auto; } .footer-bottom { justify-content: center; text-align: center; } }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Courage <span>in</span> Common</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/origin-story.html">Origin Story</a></li>
+        <li><a href="/merchandise.html">Merchandise</a></li>
+        <li><a href="/faqs.html">FAQs</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/origin-story.html">Origin Story</a>
+    <a href="/merchandise.html">Merchandise</a>
+    <a href="/faqs.html">FAQs</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="container-narrow">
+      <span class="overline reveal">Show Your Support</span>
+      <h1 class="heading-section reveal">Merchandise</h1>
+      <p class="reveal" style="font-size: 1.05rem; margin: 1rem auto 0;">Wear the ribbon. Support veterans. Every purchase helps spread the mission.</p>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="merch-grid">
+        <div class="merch-card reveal">
+          <div class="merch-img">🎗️</div>
+          <div class="merch-info">
+            <h3>Courage in Common Ribbon</h3>
+            <p class="price">$5.00</p>
+            <p>The official awareness ribbon pin. Wear it with pride.</p>
+          </div>
+        </div>
+        <div class="merch-card reveal">
+          <div class="merch-img">☕</div>
+          <div class="merch-info">
+            <h3>Coffee Mug</h3>
+            <p class="price">$10.00</p>
+            <p>Courage in Common coffee mug. Start every morning with purpose.</p>
+          </div>
+        </div>
+        <div class="merch-card reveal">
+          <div class="merch-img">🧢</div>
+          <div class="merch-info">
+            <h3>Beanie</h3>
+            <p class="price">$15.00</p>
+            <p>Unisex Courage in Common beanie. Warmth for a warm cause.</p>
+          </div>
+        </div>
+        <div class="merch-card reveal">
+          <div class="merch-img">👕</div>
+          <div class="merch-info">
+            <h3>Women's T-Shirt</h3>
+            <p class="price">$15.00</p>
+            <p>Women's Courage in Common T-shirt. Available in XS–3XL.</p>
+          </div>
+        </div>
+        <div class="merch-card reveal">
+          <div class="merch-img">👕</div>
+          <div class="merch-info">
+            <h3>Men's T-Shirt</h3>
+            <p class="price">$15.00</p>
+            <p>Men's Courage in Common T-shirt. Available in XS–3XL.</p>
+          </div>
+        </div>
+        <div class="merch-card reveal">
+          <div class="merch-img">🥤</div>
+          <div class="merch-info">
+            <h3>Travel Tumbler</h3>
+            <p class="price">$10.00</p>
+            <p>Courage in Common travel tumbler. Carry the mission with you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Courage <span>in</span> Common<span style="color: var(--gold); font-size: 0.6em;">™</span></div>
+        <p class="footer-desc">A symbol that unites those who stand for our veterans.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/origin-story.html">Origin Story</a></li>
+          <li><a href="/merchandise.html">Merchandise</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Support</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.veteranscouncilglencove.org" target="_blank" rel="noopener">Veterans Council Glen Cove</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Courage In Common. All rights reserved.</p>
+      <p class="footer-tagline">Stand Together. Support Veterans.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { hamburger.classList.remove('active'); mobileMenu.classList.remove('active'); }));
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
