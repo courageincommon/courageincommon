@@ -19,18 +19,15 @@
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: var(--font-body); font-weight: 400; color: var(--text-primary); background: var(--bg-deep); line-height: 1.8; -webkit-font-smoothing: antialiased; }
-    body::before { content: ''; position: fixed; inset: 0; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1; }
     a { color: var(--gold); text-decoration: none; transition: color var(--transition); }
     a:hover { color: var(--gold-bright); }
-    .overline { font-weight: 700; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
-    .heading-section { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; color: var(--text-primary); }
 
-    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; transition: all var(--transition); }
-    .navbar.scrolled { background: rgba(4, 10, 24, 0.95); backdrop-filter: blur(20px); padding: 1rem 0; border-bottom: 1px solid var(--border); }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 3rem; transition: all var(--transition); }
+    .navbar.scrolled { background: rgba(4, 10, 24, 0.95); backdrop-filter: blur(20px); padding: 1rem 3rem; border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
     .nav-brand { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; color: var(--text-primary); }
     .nav-brand span { color: var(--gold); }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; padding: 0; margin: 0; }
+    .nav-links { display: flex; gap: 3rem; list-style: none; padding: 0; margin: 0; margin-left: auto; }
     .nav-links a { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); transition: color var(--transition); position: relative; }
     .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width var(--transition); }
     .nav-links a:hover { color: var(--gold); }
@@ -41,25 +38,31 @@
     .hamburger.active span:nth-child(2) { opacity: 0; }
     .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
     @media (max-width: 768px) {
+      .navbar { padding: 1rem 1.5rem; }
+      .navbar.scrolled { padding: 0.8rem 1.5rem; }
       .nav-links { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000; flex-direction: column; justify-content: center; align-items: center; gap: 2.5rem; z-index: 9999; padding: 0; margin: 0; }
       .nav-links.active { display: flex; }
       .nav-links a { font-size: 0.9rem; letter-spacing: 0.25em; font-family: var(--font-display); font-weight: 400; }
       .hamburger { display: flex; }
     }
 
-    .page-hero { padding: 10rem 0 5rem; text-align: center; background: radial-gradient(ellipse at 50% 50%, rgba(58, 110, 165, 0.06) 0%, transparent 50%), var(--bg-deep); }
-    .page-hero .heading-section { margin-bottom: 1rem; }
-    .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
-    .section-pad { padding: 5rem 0; }
+    .overline { font-weight: 700; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+    .page-hero { padding: 10rem 2rem 5rem; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(58, 110, 165, 0.06) 0%, transparent 50%), var(--bg-deep); }
+    .page-hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 4vw, 3.5rem); color: var(--text-primary); margin-bottom: 1rem; }
+    .faq-section { padding: 5rem 3rem 8rem; max-width: 800px; margin: 0 auto; }
     .faq-item { border-bottom: 1px solid var(--border); padding: 2rem 0; }
     .faq-item:first-child { border-top: 1px solid var(--border); }
     .faq-question { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.5rem; }
     .faq-question::before { content: 'Q.'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
     .faq-answer { color: var(--text-muted); font-size: 0.95rem; padding-left: 2rem; line-height: 1.8; }
     .faq-answer p { margin-bottom: 1rem; }
+    @media (max-width: 768px) { .faq-section { padding: 3rem 1.5rem 5rem; } }
 
-    footer { background: var(--bg-deep); border-top: 1px solid var(--border); padding: 4rem 0 2rem; position: relative; z-index: 2; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+    .btn-primary { display: inline-block; padding: 1rem 3rem; background: var(--gold); color: var(--bg-deep); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--gold); transition: all var(--transition); text-decoration: none; }
+    .btn-primary:hover { background: var(--gold-bright); color: var(--bg-deep); box-shadow: 0 0 30px rgba(212, 175, 55, 0.2); }
+
+    footer { background: var(--bg-deep); border-top: 1px solid var(--border); padding: 4rem 0 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
     .footer-brand { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; color: var(--text-primary); margin-bottom: 1rem; }
     .footer-brand span { color: var(--gold); }
     .footer-desc { font-size: 0.9rem; color: var(--text-muted); max-width: 350px; line-height: 1.7; }
@@ -68,12 +71,10 @@
     .footer-links li { margin-bottom: 0.8rem; }
     .footer-links a { font-size: 0.9rem; color: var(--text-muted); }
     .footer-links a:hover { color: var(--gold); }
-    .btn-primary { display: inline-block; padding: 1rem 3rem; background: var(--gold); color: var(--bg-deep); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--gold); transition: all var(--transition); text-decoration: none; }
-    .btn-primary:hover { background: var(--gold-bright); color: var(--bg-deep); box-shadow: 0 0 30px rgba(212, 175, 55, 0.2); }
-    .footer-bottom { max-width: 1200px; margin: 3rem auto 0; padding: 2rem 2rem 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom { max-width: 1200px; margin: 3rem auto 0; padding: 2rem 3rem 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .footer-copy { font-size: 0.8rem; color: var(--text-dim); }
     .footer-tagline { font-family: var(--font-display); font-style: italic; font-size: 0.9rem; color: var(--text-dim); }
-    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; text-align: center; } .footer-desc { margin: 0 auto; } .footer-bottom { justify-content: center; text-align: center; } }
+    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; text-align: center; padding: 0 1.5rem; } .footer-desc { margin: 0 auto; } .footer-bottom { justify-content: center; text-align: center; padding: 2rem 1.5rem 0; } }
 
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -94,45 +95,39 @@
   </nav>
 
   <section class="page-hero">
-    <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem;">
-      <span class="overline reveal">Got Questions?</span>
-      <h1 class="heading-section reveal">Frequently Asked Questions</h1>
-      <p class="reveal" style="font-size: 1.05rem; margin: 1rem auto 0;">Everything you need to know about the Courage in Common initiative.</p>
-    </div>
+    <span class="overline reveal">Got Questions?</span>
+    <h1 class="reveal">Frequently Asked Questions</h1>
+    <p class="reveal" style="font-size: 1.05rem; color: var(--text-muted);">Everything you need to know about the Courage in Common initiative.</p>
   </section>
 
-  <section class="section-pad">
-    <div class="container-narrow">
-      <div class="faq-item reveal"><h3 class="faq-question">What is the Courage in Common Ribbon?</h3><div class="faq-answer"><p>The Courage in Common Ribbon is a multi-colored awareness ribbon designed to unite communities around veteran mental health awareness. It honors veterans, military families, and everyone committed to supporting those who have served.</p></div></div>
-      <div class="faq-item reveal"><h3 class="faq-question">What do the colors represent?</h3><div class="faq-answer">
-        <p><strong style="color: #9b59b6;">💜 Purple</strong> represents Purple Heart Cities and honors those who were wounded or killed in service to our country.</p>
-        <p><strong style="color: #7bed9f;">💚 Lime Green</strong> represents Veteran-Focused Mental Health Advocacy Communities — a symbol of hope, healing, and resilience.</p>
-        <p><strong style="color: #e74c3c;">❤️ Crimson Red Stripe</strong> represents the Marine Corps League.</p>
-        <p><strong style="color: #f1c40f;">🖤💛 Black and Gold Stripe</strong> represents the Suicide Awareness and Remembrance Flag Organization.</p>
-        <p><strong style="color: #74b9ff;">🩵 Light Blue Stripe</strong> represents AFSP's Talk Saves Lives program.</p>
-        <p><strong style="color: #2ecc71;">💚 Emerald Green Stripe</strong> represents the Veterans Council of Glen Cove.</p>
-      </div></div>
-      <div class="faq-item reveal"><h3 class="faq-question">How can I get involved?</h3><div class="faq-answer"><p>There are many ways to participate: wear the ribbon, display it at your business or organization, sponsor awareness events, support local veterans, become an official community partner, or simply help spread hope one conversation at a time.</p></div></div>
-      <div class="faq-item reveal"><h3 class="faq-question">Who can become a Courage in Common Community?</h3><div class="faq-answer"><p>Cities, towns, counties, businesses, schools, nonprofits, and veteran organizations can all participate. When a community embraces the Courage in Common mission, everyone benefits.</p></div></div>
-      <div class="faq-item reveal"><h3 class="faq-question">Where can I purchase merchandise?</h3><div class="faq-answer"><p>Visit our <a href="merchandise.html">Merchandise</a> page to browse available items including ribbons, t-shirts, beanies, mugs, and travel tumblers. A portion of every sale from merchandise goes back into the Courage In Common Lapel Pin Distribution project.</p></div></div>
-      <div class="faq-item reveal"><h3 class="faq-question">How do donations work?</h3><div class="faq-answer"><p>Donations are processed through our partner, the <a href="https://www.veteranscouncilglencove.org" target="_blank" rel="noopener">Veterans Council Glen Cove</a>. Your contribution directly supports veteran wellness programs and community outreach.</p></div></div>
-      <div class="faq-item reveal"><h3 class="faq-question">Is Courage in Common a nonprofit?</h3><div class="faq-answer"><p>Courage in Common is an initiative dedicated to promoting veteran mental health awareness. We work in partnership with established veteran organizations like the Veterans Council Glen Cove to maximize our impact.</p></div></div>
-      <div class="faq-item reveal"><h3 class="faq-question">How do I become an official community partner?</h3><div class="faq-answer"><p>Contact us to learn about partnership opportunities. Communities that officially adopt the Courage in Common Ribbon commit to promoting veteran mental health awareness and connecting veterans with local resources.</p></div></div>
-    </div>
-  </section>
+  <div class="faq-section">
+    <div class="faq-item reveal"><h3 class="faq-question">What is the Courage in Common Ribbon?</h3><div class="faq-answer"><p>The Courage in Common Ribbon is a multi-colored awareness ribbon designed to unite communities around veteran mental health awareness. It honors veterans, military families, and everyone committed to supporting those who have served.</p></div></div>
+    <div class="faq-item reveal"><h3 class="faq-question">What do the colors represent?</h3><div class="faq-answer">
+      <p><strong style="color: #9b59b6;">💜 Purple</strong> represents Purple Heart Cities and honors those who were wounded or killed in service to our country.</p>
+      <p><strong style="color: #7bed9f;">💚 Lime Green</strong> represents Veteran-Focused Mental Health Advocacy Communities — a symbol of hope, healing, and resilience.</p>
+      <p><strong style="color: #e74c3c;">❤️ Crimson Red Stripe</strong> represents the Marine Corps League.</p>
+      <p><strong style="color: #f1c40f;">🖤💛 Black and Gold Stripe</strong> represents the Suicide Awareness and Remembrance Flag Organization.</p>
+      <p><strong style="color: #74b9ff;">🩵 Light Blue Stripe</strong> represents AFSP's Talk Saves Lives program.</p>
+      <p><strong style="color: #2ecc71;">💚 Emerald Green Stripe</strong> represents the Veterans Council of Glen Cove.</p>
+    </div></div>
+    <div class="faq-item reveal"><h3 class="faq-question">How can I get involved?</h3><div class="faq-answer"><p>There are many ways to participate: wear the ribbon, display it at your business or organization, sponsor awareness events, support local veterans, become an official community partner, or simply help spread hope one conversation at a time.</p></div></div>
+    <div class="faq-item reveal"><h3 class="faq-question">Who can become a Courage in Common Community?</h3><div class="faq-answer"><p>Cities, towns, counties, businesses, schools, nonprofits, and veteran organizations can all participate. When a community embraces the Courage in Common mission, everyone benefits.</p></div></div>
+    <div class="faq-item reveal"><h3 class="faq-question">Where can I purchase merchandise?</h3><div class="faq-answer"><p>Visit our <a href="merchandise.html">Merchandise</a> page to browse available items including ribbons, t-shirts, beanies, mugs, and travel tumblers. A portion of every sale from merchandise goes back into the Courage In Common Lapel Pin Distribution project.</p></div></div>
+    <div class="faq-item reveal"><h3 class="faq-question">How do donations work?</h3><div class="faq-answer"><p>Donations are processed through our partner, the Veterans Council Glen Cove. Your contribution directly supports veteran wellness programs and community outreach.</p></div></div>
+    <div class="faq-item reveal"><h3 class="faq-question">Is Courage in Common a nonprofit?</h3><div class="faq-answer"><p>Courage in Common is an initiative dedicated to promoting veteran mental health awareness. We work in partnership with established veteran organizations like the Veterans Council Glen Cove to maximize our impact.</p></div></div>
+    <div class="faq-item reveal"><h3 class="faq-question">How do I become an official community partner?</h3><div class="faq-answer"><p>Contact us to learn about partnership opportunities. Communities that officially adopt the Courage in Common Ribbon commit to promoting veteran mental health awareness and connecting veterans with local resources.</p></div></div>
+  </div>
 
-  <section style="padding: 5rem 0; text-align: center; background: radial-gradient(ellipse at 50% 50%, rgba(58, 110, 165, 0.06) 0%, transparent 50%), var(--bg-deep);">
-    <div style="max-width: 700px; margin: 0 auto; padding: 0 2rem;">
-      <p style="font-family: var(--font-display); font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem;">Support the mission. Every donation helps veterans in our community.</p>
-      <a href="https://www.zeffy.com/en-US/donation-form/courage-in-common-mental-health-advocacy-initiative" class="btn-primary" target="_blank" rel="noopener">Donate Now</a>
-    </div>
+  <section style="padding: 5rem 0; text-align: center; background: var(--bg-deep);">
+    <p style="font-family: var(--font-display); font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem;">Support the mission. Every donation helps veterans in our community.</p>
+    <a href="https://www.zeffy.com/en-US/donation-form/courage-in-common-mental-health-advocacy-initiative" class="btn-primary" target="_blank" rel="noopener">Donate Now</a>
   </section>
 
   <footer>
     <div class="footer-inner">
       <div><div class="footer-brand">Courage <span>in</span> Common<span style="color: var(--gold); font-size: 0.6em;">™</span></div><p class="footer-desc">A symbol that unites those who stand for our veterans.</p></div>
       <div><h4 class="footer-heading">Navigate</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="origin-story.html">Origin Story</a></li><li><a href="merchandise.html">Merchandise</a></li><li><a href="faqs.html">FAQs</a></li></ul></div>
-      <div><h4 class="footer-heading">Support</h4><ul class="footer-links"><li><a href="https://www.veteranscouncilglencove.org" target="_blank" rel="noopener">Veterans Council Glen Cove</a></li></ul></div>
+      <div><h4 class="footer-heading">Support</h4><ul class="footer-links"><li><span style="color: var(--text-muted); cursor: default;">Veterans Council Glen Cove</span></li></ul></div>
     </div>
     <div class="footer-bottom"><p class="footer-copy">&copy; 2025 Courage In Common. All rights reserved.</p><p class="footer-tagline">Stand Together. Support Veterans.</p></div>
   </footer>
