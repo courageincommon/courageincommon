@@ -5,11 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Courage In Common™ — A Symbol That Unites Those Who Stand for Our Veterans</title>
   <meta name="description" content="The Courage in Common Ribbon unites communities around veteran mental health awareness. Wear the ribbon. Support veterans. Build stronger communities.">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <meta property="og:title" content="Courage In Common™ — Stand Together. Support Veterans.">
-  <meta property="og:description" content="A symbol that unites those who stand for our veterans. One ribbon. One mission. Countless lives changed.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://courageincommon.org">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -17,10 +12,8 @@
     :root {
       --bg-deep: #040a18;
       --bg-primary: #0a1628;
-      --bg-surface: #0f1f3a;
       --bg-card: #111e35;
       --border: #1a2d4d;
-      --border-gold: rgba(212, 175, 55, 0.25);
       --gold: #d4af37;
       --gold-bright: #e8c84a;
       --gold-dim: #b8960b;
@@ -33,7 +26,7 @@
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); font-weight: 400; color: var(--text-primary); background: var(--bg-deep); line-height: 1.8; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    body { font-family: var(--font-body); font-weight: 400; color: var(--text-primary); background: var(--bg-deep); line-height: 1.8; -webkit-font-smoothing: antialiased; }
     a { color: var(--gold); text-decoration: none; transition: color var(--transition); }
     a:hover { color: var(--gold-bright); }
 
@@ -62,115 +55,55 @@
       .hamburger { display: flex; }
     }
 
-    /* Hero — asymmetric split layout */
+    /* Hero — elegant centered, no image */
     .hero {
-      min-height: 100vh; display: flex; align-items: center; position: relative;
-      background: var(--bg-deep); overflow: hidden;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; position: relative; padding: 8rem 2rem 4rem;
+      background: radial-gradient(ellipse at 50% 30%, rgba(58, 110, 165, 0.06) 0%, transparent 50%), var(--bg-deep);
     }
-    .hero-left {
-      flex: 1; padding: 8rem 5% 4rem 8%; position: relative; z-index: 2;
-    }
-    .hero-right {
-      flex: 1; display: flex; align-items: center; justify-content: center;
-      position: relative; z-index: 2;
-    }
-    .hero-right img {
-      max-width: 400px; width: 100%; filter: drop-shadow(0 0 60px rgba(212, 175, 55, 0.15));
-    }
-    .hero-overline { font-weight: 700; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: block; }
+    .hero-content { max-width: 800px; position: relative; }
+    .hero-overline { font-weight: 700; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: block; }
     .hero-title {
-      font-family: var(--font-display); font-weight: 600; font-size: clamp(3rem, 5vw, 5rem);
-      line-height: 1.1; color: var(--text-primary); margin-bottom: 1.5rem;
+      font-family: var(--font-display); font-weight: 600; font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05; color: var(--text-primary); margin-bottom: 1.5rem;
     }
-    .hero-title .tm { font-size: 0.35em; vertical-align: super; color: var(--gold); font-weight: 400; }
+    .hero-title .tm { font-size: 0.3em; vertical-align: super; color: var(--gold); font-weight: 400; }
     .gold-text {
       background: linear-gradient(180deg, #B8860B, #DAA520, #FFD700, #DAA520, #B8860B);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
+    .hero-divider { width: 60px; height: 1px; background: var(--gold); margin: 2rem auto; }
     .hero-subtitle {
       font-family: var(--font-display); font-size: 1.15rem; color: var(--gold);
       letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 400;
     }
     .hero-tagline {
       font-family: var(--font-display); font-size: 1.15rem; color: var(--text-muted);
-      margin-bottom: 1.5rem; font-style: italic; font-weight: 400;
+      margin-bottom: 2rem; font-style: italic; font-weight: 400;
     }
-    .hero-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 500px; line-height: 1.8; margin-bottom: 1rem; }
+    .hero-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 550px; margin: 0 auto 1.5rem; line-height: 1.8; }
+    .hero-statement { font-family: var(--font-display); font-size: 1.5rem; color: var(--gold); font-weight: 600; margin-bottom: 2.5rem; }
     .hero-cta {
       display: inline-block; padding: 1rem 3rem; border: 1px solid var(--gold); color: var(--gold);
       font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-      transition: all var(--transition); position: relative; overflow: hidden; margin-top: 1rem;
+      transition: all var(--transition); position: relative; overflow: hidden;
     }
     .hero-cta::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: translateY(100%); transition: transform var(--transition); z-index: -1; }
     .hero-cta:hover { color: var(--bg-deep); }
     .hero-cta:hover::before { transform: translateY(0); }
-    .hero-bg-glow {
-      position: absolute; top: 50%; right: 20%; width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
-      transform: translate(50%, -50%); pointer-events: none;
-    }
-    .hero-bg-glow2 {
-      position: absolute; top: 30%; left: 10%; width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(58, 110, 165, 0.05) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    @media (max-width: 768px) {
-      .hero { flex-direction: column; text-align: center; padding-top: 6rem; }
-      .hero-left { padding: 2rem 1.5rem 3rem; }
-      .hero-right { padding: 0 1.5rem 2rem; }
-      .hero-right img { max-width: 200px; }
-      .hero-desc { margin: 0 auto 1rem; }
-    }
 
-    /* Split section — alternating text/image */
-    .split-section {
-      display: grid; grid-template-columns: 1fr 1fr; min-height: 80vh; position: relative;
-    }
-    .split-section.reverse { direction: rtl; }
-    .split-section.reverse > * { direction: ltr; }
-    .split-image {
-      position: relative; overflow: hidden;
-      background: var(--bg-primary); display: flex; align-items: center; justify-content: center;
-    }
-    .split-image img { width: 100%; height: 100%; object-fit: cover; }
-    .split-image .overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(4, 10, 24, 0.3), rgba(4, 10, 24, 0.1));
-    }
-    .split-content {
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 5rem 8%; position: relative;
-    }
-    .split-content .overline {
-      font-weight: 700; font-size: 0.75rem; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block;
-    }
-    .split-content h2 {
-      font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 3.5vw, 3rem);
-      line-height: 1.2; color: var(--text-primary); margin-bottom: 1.5rem;
-    }
-    .split-content p { color: var(--text-muted); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; max-width: 500px; }
-    .split-content .btn-outline {
-      display: inline-block; padding: 0.9rem 2.5rem; border: 1px solid rgba(212, 175, 55, 0.4);
-      color: var(--gold); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em;
-      text-transform: uppercase; transition: all var(--transition); align-self: flex-start; margin-top: 1rem;
-    }
-    .split-content .btn-outline:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.08); }
-    .split-bg-1 { background: var(--bg-deep); }
-    .split-bg-2 { background: var(--bg-primary); }
-    @media (max-width: 768px) {
-      .split-section { grid-template-columns: 1fr; min-height: auto; }
-      .split-section.reverse { direction: ltr; }
-      .split-image { min-height: 300px; order: -1; }
-      .split-content { padding: 3rem 1.5rem; }
-    }
+    /* Sections */
+    .section { padding: 8rem 3rem; }
+    .section-narrow { max-width: 800px; margin: 0 auto; }
+    .section-wide { max-width: 1200px; margin: 0 auto; }
+    .overline { font-weight: 700; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+    .section-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--text-primary); margin-bottom: 1.5rem; }
+    .section-text { color: var(--text-muted); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem; }
 
     /* Prestige box */
     .prestige-box {
-      position: relative;
-      background: linear-gradient(180deg, #0d1525, #111e35 30%, #0f1a30 60%, #0d1525);
-      border: 1px solid rgba(212, 175, 55, 0.2);
-      padding: 3.5rem 3rem;
+      position: relative; background: linear-gradient(180deg, #0d1525, #111e35 30%, #0f1a30 60%, #0d1525);
+      border: 1px solid rgba(212, 175, 55, 0.2); padding: 3.5rem 3rem;
       box-shadow: 0 0 80px rgba(212, 175, 55, 0.02), 0 4px 30px rgba(0, 0, 0, 0.4);
     }
     .corner { position: absolute; width: 40px; height: 40px; pointer-events: none; }
@@ -188,73 +121,40 @@
     .corner-br::before { bottom: 0; right: 0; width: 1px; height: 40px; }
     .corner-br::after { bottom: 0; right: 0; width: 40px; height: 1px; }
 
+    /* Divider */
+    .divider-diamond { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 3rem auto; max-width: 250px; }
+    .divider-diamond::before, .divider-diamond::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent); }
+    .divider-diamond .diamond { width: 6px; height: 6px; background: linear-gradient(135deg, var(--gold-dim), var(--gold-bright)); transform: rotate(45deg); flex-shrink: 0; }
+
     /* Represent list */
     .represent-list { list-style: none; margin: 1.5rem 0; }
-    .represent-list li {
-      padding: 0.7rem 0; border-bottom: 1px solid rgba(26, 45, 77, 0.5);
-      color: var(--text-muted); font-size: 1rem; display: flex; align-items: center; gap: 1rem;
-    }
+    .represent-list li { padding: 0.7rem 0; border-bottom: 1px solid rgba(26, 45, 77, 0.5); color: var(--text-muted); font-size: 1rem; display: flex; align-items: center; gap: 1rem; }
     .represent-list li::before { content: '◆'; color: var(--gold); font-size: 0.5rem; flex-shrink: 0; }
     .represent-list li:last-child { border-bottom: none; }
 
     /* Color grid */
-    .color-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-      max-width: 1200px; margin: 0 auto; padding: 0 3rem;
-    }
-    .color-card {
-      background: var(--bg-card); border: 1px solid var(--border); padding: 2rem;
-      transition: all var(--transition); position: relative; overflow: hidden;
-    }
-    .color-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: var(--card-accent, var(--gold)); transform: scaleX(0); transition: transform var(--transition);
-    }
-    .color-card:hover { border-color: var(--border-gold); transform: translateY(-4px); }
+    .color-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .color-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; transition: all var(--transition); position: relative; overflow: hidden; }
+    .color-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--card-accent, var(--gold)); transform: scaleX(0); transition: transform var(--transition); transform-origin: left; }
+    .color-card:hover { border-color: rgba(212, 175, 55, 0.25); transform: translateY(-4px); }
     .color-card:hover::before { transform: scaleX(1); }
     .color-card .emoji { font-size: 1.5rem; margin-bottom: 0.8rem; }
-    .color-card h3 {
-      font-family: var(--font-display); font-weight: 600; font-size: 1.1rem;
-      color: var(--text-primary); margin-bottom: 0.5rem;
-    }
-    .color-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
-    @media (max-width: 768px) { .color-grid { grid-template-columns: 1fr; padding: 0 1.5rem; } }
+    .color-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem; }
+    .color-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
 
     /* CTA */
-    .section-cta {
-      padding: 8rem 0; text-align: center; position: relative; overflow: hidden;
-      background: var(--bg-deep);
-    }
-    .section-cta::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 60%);
-    }
-    .section-cta h2 {
-      font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 4vw, 3.5rem);
-      color: var(--text-primary); margin-bottom: 1.5rem; position: relative;
-    }
+    .section-cta { padding: 8rem 2rem; text-align: center; position: relative; background: var(--bg-deep); }
+    .section-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 60%); }
+    .section-cta h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 4vw, 3.5rem); color: var(--text-primary); margin-bottom: 1.5rem; position: relative; }
     .section-cta p { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 1rem; position: relative; }
     .cta-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; position: relative; }
-    .btn-primary {
-      display: inline-block; padding: 1rem 3rem; background: var(--gold); color: var(--bg-deep);
-      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-      border: 1px solid var(--gold); transition: all var(--transition); text-decoration: none;
-    }
+    .btn-primary { display: inline-block; padding: 1rem 3rem; background: var(--gold); color: var(--bg-deep); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--gold); transition: all var(--transition); }
     .btn-primary:hover { background: var(--gold-bright); color: var(--bg-deep); box-shadow: 0 0 30px rgba(212, 175, 55, 0.2); }
-    .btn-outline {
-      display: inline-block; padding: 1rem 3rem; background: transparent; color: var(--gold);
-      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-      border: 1px solid rgba(212, 175, 55, 0.4); transition: all var(--transition); text-decoration: none;
-    }
+    .btn-outline { display: inline-block; padding: 1rem 3rem; background: transparent; color: var(--gold); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid rgba(212, 175, 55, 0.4); transition: all var(--transition); }
     .btn-outline:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.08); color: var(--gold-bright); }
 
-    /* Divider */
-    .divider-diamond { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 2.5rem auto; max-width: 250px; }
-    .divider-diamond::before, .divider-diamond::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent); }
-    .divider-diamond .diamond { width: 6px; height: 6px; background: linear-gradient(135deg, var(--gold-dim), var(--gold-bright)); transform: rotate(45deg); flex-shrink: 0; }
-
     /* Footer */
-    footer { background: var(--bg-deep); border-top: 1px solid var(--border); padding: 4rem 0 2rem; position: relative; z-index: 2; }
+    footer { background: var(--bg-deep); border-top: 1px solid var(--border); padding: 4rem 0 2rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
     .footer-brand { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; color: var(--text-primary); margin-bottom: 1rem; }
     .footer-brand span { color: var(--gold); }
@@ -268,11 +168,13 @@
     .footer-copy { font-size: 0.8rem; color: var(--text-dim); }
     .footer-tagline { font-family: var(--font-display); font-style: italic; font-size: 0.9rem; color: var(--text-dim); }
     @media (max-width: 768px) {
+      .section { padding: 5rem 1.5rem; }
+      .color-grid { grid-template-columns: 1fr; }
+      .prestige-box { padding: 2rem 1.5rem; }
       .footer-inner { grid-template-columns: 1fr; text-align: center; padding: 0 1.5rem; }
       .footer-desc { margin: 0 auto; }
       .footer-bottom { justify-content: center; text-align: center; padding: 2rem 1.5rem 0; }
       .cta-buttons { flex-direction: column; align-items: center; }
-      .prestige-box { padding: 2rem 1.5rem; }
     }
 
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -297,64 +199,59 @@
     </div>
   </nav>
 
-  <!-- HERO — Split layout -->
+  <!-- HERO — Clean, text-only, elegant -->
   <section class="hero">
-    <div class="hero-bg-glow"></div>
-    <div class="hero-bg-glow2"></div>
-    <div class="hero-left">
+    <div class="hero-content">
       <span class="hero-overline reveal">Veteran Mental Health Advocacy</span>
-      <h1 class="hero-title reveal reveal-delay-1">Courage<br><span class="gold-text">in</span> Common<span class="tm">™</span></h1>
+      <h1 class="hero-title reveal reveal-delay-1">Courage <span class="gold-text">in</span> Common<span class="tm">™</span></h1>
+      <div class="hero-divider reveal reveal-delay-1"></div>
       <p class="hero-subtitle reveal reveal-delay-2">A Symbol That Unites Those Who Stand for Our Veterans</p>
       <p class="hero-tagline reveal reveal-delay-2">One Ribbon. One Mission. Countless Lives Changed.</p>
       <p class="hero-desc reveal reveal-delay-3">Every day, veterans and their families face invisible battles that too often go unnoticed. The Courage in Common Ribbon was created to unite communities around a simple but powerful belief:</p>
-      <p style="font-family: var(--font-display); font-size: 1.4rem; color: var(--gold); font-weight: 600;" class="reveal reveal-delay-3">No veteran should fight alone.</p>
+      <p class="hero-statement reveal reveal-delay-3">No veteran should fight alone.</p>
       <a href="#mission" class="hero-cta reveal reveal-delay-3">Learn More</a>
     </div>
-    <div class="hero-right reveal">
-      <img src="images/hero-coin.png" alt="Courage In Common Challenge Coin">
-    </div>
   </section>
 
-  <!-- SPLIT — Mission (text left, image right) -->
-  <section class="split-section split-bg-1" id="mission">
-    <div class="split-content">
+  <!-- MISSION — Text only, centered -->
+  <section class="section" id="mission" style="background: var(--bg-primary);">
+    <div class="section-narrow">
       <span class="overline reveal">Our Purpose</span>
-      <h2 class="reveal reveal-delay-1">More Than a Symbol</h2>
-      <p class="reveal reveal-delay-2">This ribbon is more than a symbol. It is a commitment to reducing stigma, encouraging conversations about mental health, strengthening community support, and recognizing the organizations and individuals working together to improve the lives of veterans.</p>
-      <a href="origin-story.html" class="btn-outline reveal reveal-delay-3">Read Our Story</a>
-    </div>
-    <div class="split-image reveal">
-      <img src="images/color-ribbon.png" alt="Courage In Common Ribbon">
-      <div class="overlay"></div>
+      <h2 class="section-title reveal reveal-delay-1">More Than a Symbol</h2>
+      <p class="section-text reveal reveal-delay-2">This ribbon is more than a symbol. It is a commitment to reducing stigma, encouraging conversations about mental health, strengthening community support, and recognizing the organizations and individuals working together to improve the lives of veterans.</p>
     </div>
   </section>
 
-  <!-- SPLIT REVERSE — Ribbon meaning (image left, text right) -->
-  <section class="split-section reverse split-bg-2">
-    <div class="split-content">
-      <span class="overline reveal">What It Means</span>
-      <h2 class="reveal reveal-delay-1">What the Ribbon Represents</h2>
-      <p class="reveal reveal-delay-2">The Courage in Common Ribbon honors those who stand together for veteran wellness.</p>
-      <ul class="represent-list reveal reveal-delay-2">
-        <li>Veterans and active-duty service members</li>
-        <li>Military families and caregivers</li>
-        <li>Community advocates</li>
-        <li>Organizations committed to veteran wellness</li>
-        <li>Every person who believes courage is stronger when shared</li>
-      </ul>
-    </div>
-    <div class="split-image reveal">
-      <img src="images/hero-coin.png" alt="Courage In Common Coin">
-      <div class="overlay"></div>
+  <!-- RIBBON MEANING — Prestige box -->
+  <section class="section" style="background: var(--bg-deep);">
+    <div class="section-narrow">
+      <div class="prestige-box reveal">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <span class="overline">What It Means</span>
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">What the Ribbon Represents</h2>
+        <p class="section-text">The Courage in Common Ribbon honors:</p>
+        <ul class="represent-list">
+          <li>Veterans and active-duty service members</li>
+          <li>Military families and caregivers</li>
+          <li>Community advocates</li>
+          <li>Organizations committed to veteran wellness</li>
+          <li>Every person who believes courage is stronger when shared</li>
+        </ul>
+        <div class="divider-diamond"><div class="diamond"></div></div>
+        <p style="font-family: var(--font-display); font-style: italic; font-size: 1.15rem; color: var(--gold); text-align: center;">It reminds us that asking for help is an act of courage — and offering support is an act of service.</p>
+      </div>
     </div>
   </section>
 
-  <!-- COLOR GRID -->
-  <section style="padding: 8rem 0; background: var(--bg-deep);">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 3rem;">
+  <!-- COLORS — Card grid -->
+  <section class="section" style="background: var(--bg-primary);">
+    <div class="section-wide">
       <div style="text-align: center; margin-bottom: 4rem;">
         <span class="overline reveal" style="display: block;">Symbolism</span>
-        <h2 class="reveal reveal-delay-1" style="font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--text-primary);">The Meaning Behind the Colors</h2>
+        <h2 class="section-title reveal reveal-delay-1">The Meaning Behind the Colors</h2>
       </div>
       <div class="color-grid">
         <div class="color-card reveal" style="--card-accent: #9b59b6;"><div class="emoji">💜</div><h3>Purple</h3><p>Represents Purple Heart Cities and honors those who were wounded or killed in service to our country.</p></div>
@@ -369,14 +266,12 @@
 
   <!-- CTA -->
   <section class="section-cta">
-    <div style="max-width: 700px; margin: 0 auto; padding: 0 2rem; position: relative;">
-      <h2 class="reveal">Stand Together. Support Veterans.</h2>
-      <p class="reveal reveal-delay-1">Whether you're a veteran, family member, civic leader, business owner, or simply someone who cares — there is a place for you.</p>
-      <p class="reveal reveal-delay-2" style="font-family: var(--font-display); font-style: italic; font-size: 1.1rem; margin-bottom: 2rem;">Because no hero should ever have to carry the weight of service alone.</p>
-      <div class="cta-buttons reveal reveal-delay-3">
-        <a href="https://www.zeffy.com/en-US/donation-form/courage-in-common-mental-health-advocacy-initiative" class="btn-primary" target="_blank" rel="noopener">Donate Now</a>
-        <a href="origin-story.html" class="btn-outline">Read Our Story</a>
-      </div>
+    <h2 class="reveal">Stand Together. Support Veterans.</h2>
+    <p class="reveal reveal-delay-1">Whether you're a veteran, family member, civic leader, business owner, or simply someone who cares — there is a place for you.</p>
+    <p class="reveal reveal-delay-2" style="font-family: var(--font-display); font-style: italic; font-size: 1.1rem; margin-bottom: 2rem;">Because no hero should ever have to carry the weight of service alone.</p>
+    <div class="cta-buttons reveal reveal-delay-3">
+      <a href="https://www.zeffy.com/en-US/donation-form/courage-in-common-mental-health-advocacy-initiative" class="btn-primary" target="_blank" rel="noopener">Donate Now</a>
+      <a href="origin-story.html" class="btn-outline">Read Our Story</a>
     </div>
   </section>
 
@@ -399,7 +294,7 @@
       <div>
         <h4 class="footer-heading">Support</h4>
         <ul class="footer-links">
-          <li><a href="https://www.veteranscouncilglencove.org" target="_blank" rel="noopener">Veterans Council Glen Cove</a></li>
+          <li><span style="color: var(--text-muted); cursor: default;">Veterans Council Glen Cove</span></li>
           <li><a href="origin-story.html">Our Story</a></li>
         </ul>
       </div>
