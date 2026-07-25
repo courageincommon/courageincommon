@@ -78,6 +78,13 @@
 
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+    .color-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+    .color-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; transition: all var(--transition); position: relative; overflow: hidden; }
+    .color-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--card-accent, var(--gold)); }
+    .color-card:hover { border-color: rgba(212, 175, 55, 0.25); transform: translateY(-4px); }
+    .color-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem; }
+    .color-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+    @media (max-width: 768px) { .color-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -103,12 +110,14 @@
   <div class="faq-section">
     <div class="faq-item reveal"><h3 class="faq-question">What is the Courage in Common Ribbon?</h3><div class="faq-answer"><p>The Courage in Common Ribbon is a multi-colored awareness ribbon designed to unite communities around veteran mental health awareness. It honors veterans, military families, and everyone committed to supporting those who have served.</p></div></div>
     <div class="faq-item reveal"><h3 class="faq-question">What do the colors represent?</h3><div class="faq-answer">
-      <p><strong style="color: #6520bd;">💜 Purple</strong> represents Purple Heart Cities and honors those who were wounded or killed in service to our country.</p>
-      <p><strong style="color: #aac929;">💚 Lime Green</strong> represents Veteran-Focused Mental Health Advocacy Communities — a symbol of hope, healing, and resilience.</p>
-      <p><strong style="color: #b70114;">❤️ Crimson Red Stripe</strong> represents the Marine Corps League.</p>
-      <p><strong style="color: #f1c40f;">🖤💛 Black and Gold Stripe</strong> represents the Suicide Awareness and Remembrance Flag Organization.</p>
-      <p><strong style="color: #73aef8;">🩵 Light Blue Stripe</strong> represents AFSP's Talk Saves Lives program.</p>
-      <p><strong style="color: #0f7c2d;">💚 Emerald Green Stripe</strong> represents the Veterans Council of Glen Cove.</p>
+      <div class="color-grid">
+        <div class="color-card" style="--card-accent: #6520bd;"><h3>Purple</h3><p>Represents Purple Heart Cities and honors those who were wounded or killed in service to our country.</p></div>
+        <div class="color-card" style="--card-accent: #aac929;"><h3>Lime Green</h3><p>Represents Veteran-Focused Mental Health Advocacy Communities — a symbol of hope, healing, and resilience.</p></div>
+        <div class="color-card" style="--card-accent: #b70114;"><h3>Crimson Red Stripe</h3><p>Represents the Marine Corps League and its unwavering commitment to veterans.</p></div>
+        <div class="color-card" style="--card-accent: linear-gradient(90deg, #1a1a1a 50%, #f1c40f 50%);"><h3>Black and Gold Stripe</h3><p>Represents the Suicide Awareness and Remembrance Flag Organization.</p></div>
+        <div class="color-card" style="--card-accent: #73aef8;"><h3>Light Blue Stripe</h3><p>Represents AFSP's Talk Saves Lives program — conversations that save lives.</p></div>
+        <div class="color-card" style="--card-accent: #0f7c2d;"><h3>Emerald Green Stripe</h3><p>Represents the Veterans Council of Glen Cove, who launched the Courage In Common movement.</p></div>
+      </div>
     </div></div>
     <div class="faq-item reveal"><h3 class="faq-question">How can I get involved?</h3><div class="faq-answer"><p>There are many ways to participate: wear the ribbon, display it at your business or organization, sponsor awareness events, support local veterans, become an official community partner, or simply help spread hope one conversation at a time.</p></div></div>
     <div class="faq-item reveal"><h3 class="faq-question">Who can become a Courage in Common Community?</h3><div class="faq-answer"><p>Cities, towns, counties, businesses, schools, nonprofits, and veteran organizations can all participate. When a community embraces the Courage in Common mission, everyone benefits.</p></div></div>
