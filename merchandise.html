@@ -52,7 +52,8 @@
     .merch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 5rem 3rem 8rem; }
     .merch-card { background: var(--bg-card); border: 1px solid var(--border); overflow: hidden; transition: all var(--transition); }
     .merch-card:hover { border-color: rgba(212, 175, 55, 0.25); transform: translateY(-4px); }
-    .merch-img { width: 100%; aspect-ratio: 1; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .merch-img { width: 100%; aspect-ratio: 1; overflow: hidden; }
+    .merch-img img { width: 100%; height: 100%; object-fit: cover; }
     .merch-info { padding: 1.5rem; }
     .merch-info h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.3rem; }
     .merch-info .price { font-size: 1.1rem; color: var(--gold); font-weight: 500; margin-bottom: 0.5rem; }
@@ -98,20 +99,42 @@
   <section class="page-hero">
     <span class="overline reveal">Show Your Support</span>
     <h1 class="reveal">Merchandise</h1>
-    <p class="reveal" style="font-size: 1.05rem; color: var(--text-muted);">Wear the ribbon. Support veterans. Every purchase helps spread the mission.</p>
+    <p class="reveal" style="font-size: 1.05rem; color: var(--text-muted);">Wear the ribbon. Support veterans. A portion of every sale goes back into the Courage In Common mission.</p>
   </section>
 
   <div class="merch-grid">
-    <div class="merch-card reveal" style="border-color: rgba(212, 175, 55, 0.4);"><div class="merch-img">🎗️</div><div class="merch-info"><h3>Courage in Common Ribbon</h3><p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.5rem;">Not available for purchase on this site</p><p style="margin-bottom: 0.5rem;">To order, contact:<br><strong style="color: var(--gold);">Major Fred Nielson</strong><br>Founder, Veterans Council of Glen Cove<br><a href="tel:5166600979" style="color: var(--gold);">516-660-0979</a> — Call or Text</p></div></div>
-    <div class="merch-card reveal"><div class="merch-img">☕</div><div class="merch-info"><h3>Coffee Mug</h3><p class="price">$10.00</p><p>Courage in Common coffee mug. Start every morning with purpose.</p></div></div>
-    <div class="merch-card reveal"><div class="merch-img">🧢</div><div class="merch-info"><h3>Beanie</h3><p class="price">$15.00</p><p>Unisex Courage in Common beanie. Warmth for a warm cause.</p></div></div>
-    <div class="merch-card reveal"><div class="merch-img">👕</div><div class="merch-info"><h3>Women's T-Shirt</h3><p class="price">$15.00</p><p>Women's Courage in Common T-shirt. Available in XS–3XL.</p></div></div>
-    <div class="merch-card reveal"><div class="merch-img">👕</div><div class="merch-info"><h3>Men's T-Shirt</h3><p class="price">$15.00</p><p>Men's Courage in Common T-shirt. Available in XS–3XL.</p></div></div>
-    <div class="merch-card reveal"><div class="merch-img">🥤</div><div class="merch-info"><h3>Travel Tumbler</h3><p class="price">$10.00</p><p>Courage in Common travel tumbler. Carry the mission with you.</p></div></div>
+    <div class="merch-card reveal" style="border-color: rgba(212, 175, 55, 0.4);">
+      <div class="merch-img" style="background: var(--bg-primary); display: flex; align-items: center; justify-content: center; font-size: 3rem;">🎗️</div>
+      <div class="merch-info">
+        <h3>Courage in Common Ribbon</h3>
+        <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.5rem;">Not available for purchase on this site</p>
+        <p>To order, contact:<br><strong style="color: var(--gold);">Major Fred Nielson</strong><br>Founder, Veterans Council of Glen Cove<br><a href="tel:5166600979" style="color: var(--gold);">516-660-0979</a> — Call or Text</p>
+      </div>
+    </div>
+    <div class="merch-card reveal">
+      <div class="merch-img"><img src="images/merch-coffee-cup.jpg" alt="Coffee Cup"></div>
+      <div class="merch-info"><h3>Coffee Cup</h3><p class="price">$10.00</p><p>Courage in Common coffee cup. Start every morning with purpose.</p></div>
+    </div>
+    <div class="merch-card reveal">
+      <div class="merch-img"><img src="images/merch-travel-mug.jpg" alt="Travel Mug"></div>
+      <div class="merch-info"><h3>Travel Mug</h3><p class="price">$15.00</p><p>Courage in Common travel mug. Carry the mission with you.</p></div>
+    </div>
+    <div class="merch-card reveal">
+      <div class="merch-img"><img src="images/merch-tshirt.jpg" alt="T-Shirt"></div>
+      <div class="merch-info"><h3>T-Shirt</h3><p class="price">$20.00</p><p>Courage in Common T-shirt. Available in XS–3XL.</p></div>
+    </div>
+    <div class="merch-card reveal">
+      <div class="merch-img"><img src="images/merch-sweater.jpg" alt="Sweater"></div>
+      <div class="merch-info"><h3>Sweater</h3><p class="price">$25.00</p><p>Courage in Common sweater. Stay warm for a warm cause.</p></div>
+    </div>
+    <div class="merch-card reveal">
+      <div class="merch-img"><img src="images/merch-sweater2.jpg" alt="Sweater Alternate"></div>
+      <div class="merch-info"><h3>Sweater</h3><p class="price">$25.00</p><p>Courage in Common sweater. Available in XS–3XL.</p></div>
+    </div>
   </div>
 
   <section style="padding: 5rem 0; text-align: center; background: var(--bg-deep);">
-    <p style="font-family: var(--font-display); font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; position: relative;">Support the mission. Every donation helps veterans in our community.</p>
+    <p style="font-family: var(--font-display); font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem;">Support the mission. Every donation helps veterans in our community.</p>
     <a href="https://www.zeffy.com/en-US/donation-form/courage-in-common-mental-health-advocacy-initiative" class="btn-primary" target="_blank" rel="noopener">Donate Now</a>
   </section>
 
