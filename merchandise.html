@@ -71,11 +71,11 @@
     .page-hero { padding: 10rem 2rem 5rem; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(58, 110, 165, 0.06) 0%, transparent 50%), var(--bg-deep); }
     .page-hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 4vw, 3.5rem); color: var(--text-primary); margin-bottom: 1rem; }
     .merch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 5rem 3rem 8rem; }
-    .merch-card { background: var(--bg-card); border: 1px solid var(--border); overflow: hidden; transition: all var(--transition); }
+    .merch-card { background: var(--bg-card); border: 1px solid var(--border); overflow: hidden; transition: all var(--transition); display: flex; flex-direction: column; }
     .merch-card:hover { border-color: rgba(212, 175, 55, 0.25); transform: translateY(-4px); }
     .merch-img { width: 100%; aspect-ratio: 1; overflow: hidden; }
     .merch-img img { width: 100%; height: 100%; object-fit: cover; }
-    .merch-info { padding: 1.5rem; }
+    .merch-info { padding: 1.5rem; display: flex; flex-direction: column; min-height: 140px; }
     .merch-info h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.3rem; }
     .merch-info .price { font-size: 1.1rem; color: var(--gold); font-weight: 500; margin-bottom: 0.5rem; }
     .merch-info p { font-size: 0.9rem; color: var(--text-muted); }
