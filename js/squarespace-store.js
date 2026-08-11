@@ -72,6 +72,16 @@
         description: 'Left front design only. Multi-color design. American made.',
         variants: 'Sizes XS–XL (standard store price). Sizes over XL: additional cost.',
       },
+      {
+        id: 'beanie-hat',
+        name: 'Beanie/Hat',
+        storePrice: 15.0,
+        slug: 'beaniehat',
+        url: `${STORE_BASE}/shop/p/beaniehat`,
+        image: 'images/beaniehat.jpg',
+        description: 'Courage In Common beanie with logo. American made.',
+        variants: null,
+      },
     ],
 
     pricingNotes: [
