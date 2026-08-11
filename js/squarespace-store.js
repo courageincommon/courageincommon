@@ -68,7 +68,7 @@
         storePrice: 60.0,
         slug: 'hooded-sweatshirt',
         url: `${STORE_BASE}/shop/p/hooded-sweatshirt`,
-        image: 'images/merch-hoodie-placeholder.jpg',
+        image: 'images/hooded-sweatshirt.jpg',
         description: 'Left front design only. Multi-color design. American made.',
         variants: 'Sizes XS–XL (standard store price). Sizes over XL: additional cost.',
       },
