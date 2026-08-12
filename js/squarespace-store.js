@@ -75,7 +75,7 @@
       {
         id: 'beanie-hat',
         name: 'Beanie/Hat',
-        storePrice: 15.0,
+        storePrice: 20.0,
         slug: 'beaniehat',
         url: `${STORE_BASE}/shop/p/beaniehat`,
         image: 'images/beaniehat.jpg',

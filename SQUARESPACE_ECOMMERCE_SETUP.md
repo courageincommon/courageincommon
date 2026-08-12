@@ -76,7 +76,7 @@ Products and **store prices** are from the **Everything Created Special (ECS)** 
 | 4   | Long Sleeve T-Shirt (Adult)        | **$32.00**  | `long-sleeve-t-shirt`     | `images/merch-long-sleeve-placeholder.jpg` |
 | 5   | Crew Neck Sweatshirt (Adult)       | **$52.00**  | `crew-neck-sweatshirt`    | `images/merch-sweater.jpg`                 |
 | 6   | Hooded Sweatshirt                  | **$60.00**  | `hooded-sweatshirt`       | `images/hooded-sweatshirt.jpg`                 |
-| 7   | Beanie/Hat                         | **$15.00**  | `beaniehat`               | `images/beaniehat.jpg`                         |
+| 7   | Beanie/Hat                         | **$20.00**  | `beaniehat`               | `images/beaniehat.jpg`                         |
 
 
 **Not sold online:** Courage in Common Ribbon — phone order only (Major Fred Nielson, 516-660-0979).
@@ -141,7 +141,7 @@ Use the **ECS catalog table** above. For each row:
 
 > Left front design only. Multi-color design. American made. Standard store price for sizes up to XL. Sizes over XL require additional cost.
 
-**Beanie/Hat** — $15.00  
+**Beanie/Hat** — $20.00  
 
 > Courage In Common beanie with logo. American made.
 
